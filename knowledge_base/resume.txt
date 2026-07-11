@@ -1,0 +1,6 @@
+A student resume should include name, contact details, career objective, education, technical skills, projects, internships, certifications, achievements, and GitHub or LinkedIn links.
+
+Freshers should keep the resume to one page.
+Projects should explain problem statement, technologies used, features, and outcome.
+Avoid spelling mistakes and fake skills.
+Use simple and clear language.

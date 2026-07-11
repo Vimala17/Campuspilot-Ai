@@ -1,0 +1,11 @@
+Students should manage weekly money by dividing it into food, travel, emergency, savings, and optional spending.
+
+For a small weekly budget like ₹500, students can use:
+Food: ₹250
+Travel: ₹100
+Emergency: ₹50
+Savings: ₹50
+Extra: ₹50
+
+Students should avoid unnecessary snacks, online orders, impulse shopping, and unused subscriptions.
+Tracking expenses daily helps students understand where money is going.

@@ -1,0 +1,9 @@
+Placement preparation should include aptitude, programming, DSA, resume, projects, communication, and mock interviews.
+
+A 30-day placement plan:
+Week 1: Python basics, aptitude, resume improvement
+Week 2: DSA basics like arrays, strings, linked lists, stacks, queues
+Week 3: SQL, Git, project explanation, HR questions
+Week 4: Mock interviews, company research, revision, confidence building
+
+Students should practice coding daily and revise projects clearly.

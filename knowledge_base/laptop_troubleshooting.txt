@@ -1,0 +1,13 @@
+If a laptop is slow, common reasons include low storage, too many startup apps, temporary files, background apps, outdated Windows, malware, or low RAM.
+
+Solutions:
+Restart the laptop
+Delete temporary files
+Uninstall unused apps
+Disable startup apps
+Keep at least 20 percent storage free
+Update Windows
+Run antivirus scan
+Close unnecessary browser tabs
+
+If the laptop overheats or shuts down, clean vents and use a cooling pad.

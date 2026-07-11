@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusPilot AI</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="dark">
+
+<div class="container">
+
+    <!-- Sidebar Component -->
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">🎓</div>
+            <div>
+                <h2>CampusPilot AI</h2>
+                <p>Your College Life Assistant</p>
+            </div>
+        </div>
+
+        <button id="newChat" class="new-chat-btn">
+            <i class="fa-solid fa-plus"></i> New Chat
+        </button>
+
+        <!-- History with Live Search & Delete Options -->
+        <div class="history-section">
+            <h3>
+                <i class="fa-solid fa-clock-rotate-left"></i> Recent Chats
+            </h3>
+            
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="historySearch" placeholder="Search history...">
+            </div>
+
+            <div id="historyList">
+                <!-- Dynamically generated through JS -->
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Panel -->
+    <main class="chat-section">
+        <header>
+            <div>
+                <h1>CampusPilot AI</h1>
+                <p>Your Personal AI Companion for College Success</p>
+            </div>
+            <div class="header-actions">
+                <button id="themeToggle" class="theme-toggle">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Suggestions Chips -->
+        <div class="suggestions">
+            <button class="suggestion">💰 Manage ₹500 Budget</button>
+            <button class="suggestion">💼 Placement Plan</button>
+            <button class="suggestion">🎤 Interview Checklist</button>
+            <button class="suggestion">💻 Laptop Slow</button>
+            <button class="suggestion">📚 Missed Class</button>
+        </div>
+
+        <!-- Chat Feed -->
+        <div id="chatBox">
+            <div class="bot-message">
+                <div class="avatar">🤖</div>
+                
+                <div class="message welcome-card">
+                    <div class="welcome-header">
+                        <h3>Welcome to CampusPilot AI 👋</h3>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="typing" class="typing">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Input Section (Mic Fully Removed) -->
+        <div class="input-area">
+            <input id="question" type="text" placeholder="Ask anything about college life...">
+            <button id="sendBtn">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+        </div>
+    </main>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

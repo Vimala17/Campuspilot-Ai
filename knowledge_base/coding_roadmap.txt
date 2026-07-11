@@ -1,0 +1,26 @@
+Students should learn programming step by step instead of trying to learn everything at once.
+
+Coding Roadmap:
+
+Step 1:
+Learn Programming Basics
+
+Step 2:
+Learn Data Structures
+
+Step 3:
+Practice Algorithms
+
+Step 4:
+Solve Coding Problems Daily
+
+Step 5:
+Build Real Projects
+
+Step 6:
+Learn Git and GitHub
+
+Step 7:
+Prepare for Coding Interviews
+
+Practicing coding every day is better than learning many topics in one day.

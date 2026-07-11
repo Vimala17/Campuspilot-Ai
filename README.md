@@ -8,22 +8,22 @@ It combines **Retrieval-Augmented Generation (RAG)** with a local Large Language
 
 # 🚀 Features
 
-- 📚 Study Planning
-- 💼 Placement Preparation
-- 🎤 Interview Checklists
-- 📝 Resume Guidance
-- 💰 Budget Management
-- 🏠 Hostel Life Tips
-- 💻 Laptop Troubleshooting
-- ⏰ Time Management
-- 🚀 Internship Guidance
-- 🎓 Scholarship Information
-- 😊 Mental Wellbeing Support
-- 📖 Coding Roadmaps
-- 💬 Chat History
-- 🌙 Dark / Light Theme
-- 🔍 RAG-based Knowledge Retrieval
-- 🤖 Local AI using Ollama
+- Study Planning
+- Placement Preparation
+- Interview Checklists
+- Resume Guidance
+- Budget Management
+- Hostel Life Tips
+- Laptop Troubleshooting
+- Time Management
+- Internship Guidance
+- Scholarship Information
+- Mental Wellbeing Support
+- Coding Roadmaps
+- Chat History
+- Dark / Light Theme
+- RAG-based Knowledge Retrieval
+- Local AI using Ollama
 
 ---
 
@@ -201,13 +201,13 @@ The knowledge base can be expanded by adding more `.txt` files and rebuilding th
 
 ---
 
-# 🎯 Why I Built This
+# Why I Built This
 
 College students often search for information across multiple websites and videos. CampusPilot AI brings useful academic and career guidance together in one assistant, making it easier to get quick, relevant answers.
 
 ---
 
-# ⚖️ Design Tradeoff
+# Design Tradeoff
 
 I chose a **RAG-based approach** instead of fine-tuning a language model.
 
@@ -240,7 +240,7 @@ The quality of responses depends on the knowledge base. If the required informat
 
 ---
 
-# 👩‍💻 Author
+# Author
 
 **Vanaparthi Vimala**
 
@@ -254,4 +254,3 @@ https://github.com/Vimala17
 
 ---
 
-⭐ If you found this project useful, consider giving it a star!

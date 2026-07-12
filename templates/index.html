@@ -18,7 +18,6 @@
 
 <div class="container">
 
-    <!-- Sidebar Component -->
     <aside class="sidebar">
         <div class="logo">
             <div class="logo-icon">🎓</div>
@@ -32,7 +31,6 @@
             <i class="fa-solid fa-plus"></i> New Chat
         </button>
 
-        <!-- History with Live Search & Delete Options -->
         <div class="history-section">
             <h3>
                 <i class="fa-solid fa-clock-rotate-left"></i> Recent Chats
@@ -44,12 +42,17 @@
             </div>
 
             <div id="historyList">
-                <!-- Dynamically generated through JS -->
-            </div>
+                </div>
+        </div>
+
+        <div class="sidebar-auth-terminal-footer">
+            <a href="/logout" class="auth-logout-action-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
         </div>
     </aside>
 
-    <!-- Main Panel -->
     <main class="chat-section">
         <header>
             <div>
@@ -63,7 +66,6 @@
             </div>
         </header>
 
-        <!-- Suggestions Chips -->
         <div class="suggestions">
             <button class="suggestion">💰 Manage ₹500 Budget</button>
             <button class="suggestion">💼 Placement Plan</button>
@@ -72,7 +74,6 @@
             <button class="suggestion">📚 Missed Class</button>
         </div>
 
-        <!-- Chat Feed -->
         <div id="chatBox">
             <div class="bot-message">
                 <div class="avatar">🤖</div>
@@ -82,7 +83,6 @@
                         <h3>Welcome to CampusPilot AI 👋</h3>
                     </div>
                 </div>
-
             </div>
         </div>
 
@@ -92,7 +92,6 @@
             <span></span>
         </div>
 
-        <!-- Input Section (Mic Fully Removed) -->
         <div class="input-area">
             <input id="question" type="text" placeholder="Ask anything about college life...">
             <button id="sendBtn">

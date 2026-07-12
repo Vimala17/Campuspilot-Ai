@@ -542,3 +542,47 @@ body.light .welcome-header h3 {
     color: #a78bfa !important;
     text-decoration: underline;
 }
+/* ==========================================================================
+   PREMIUM BOTTOM RADICAL RED LOGOUT WRAPPER TERMINAL (New Chat Mirror Layout)
+   ========================================================================== */
+.sidebar-bottom-action {
+    margin-top: auto; /* Force structural alignment drop to the absolute bottom row */
+    padding-top: 16px;
+    width: 100%;
+}
+
+.auth-logout-action-btn {
+    width: 100%;
+    /* Mirrored structural properties setup from .new-chat-btn */
+    background: linear-gradient(90deg, #dc2626, #991b1b) !important; 
+    color: #ffffff !important;
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    /* Soft Red ambient layout drop shadow reflection */
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.25);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease;
+}
+
+/* Premium micro interaction hover translations rules */
+.auth-logout-action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.45);
+    background: linear-gradient(90deg, #ef4444, #b91c1c) !important;
+}
+
+.auth-logout-action-btn i {
+    font-size: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.auth-logout-action-btn:hover i {
+    transform: scale(1.05);
+}

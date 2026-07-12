@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusPilot AI - Create Student Account</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="auth-page-layout">
+    <div class="auth-card-wrapper">
+        <div class="auth-brand-header">
+            <i class="fa-solid fa-graduation-cap auth-logo-icon"></i>
+            <h2>CampusPilot AI</h2>
+            <p class="auth-subtitle">Create an account to clear workflows & custom roadmaps</p>
+        </div>
+        
+        <form id="signupForm">
+            <div class="auth-input-group">
+                <label><i class="fa-solid fa-user"></i> Full Name</label>
+                <input type="text" id="signupUser" placeholder="Enter your name..." required>
+            </div>
+            <div class="auth-input-group">
+                <label><i class="fa-solid fa-envelope"></i> Email Address</label>
+                <input type="email" id="signupEmail" placeholder="student@college.edu" required>
+            </div>
+            <div class="auth-input-group">
+                <label><i class="fa-solid fa-lock"></i> Create Password</label>
+                <input type="password" id="signupPassword" placeholder="Minimum 6 characters..." required>
+            </div>
+            <button type="submit" class="auth-action-btn">
+                <span>Sign Up</span> <i class="fa-solid fa-arrow-right-to-bracket"></i>
+            </button>
+        </form>
+        
+        <p class="auth-redirect-text">Already registered? <a href="/login">Log In instead</a></p>
+    </div>
+
+    <script>
+        document.getElementById("signupForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const username = document.getElementById("signupUser").value.trim();
+            const email = document.getElementById("signupEmail").value.trim();
+            const password = document.getElementById("signupPassword").value.trim();
+
+            try {
+                const response = await fetch('/signup', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, email, password })
+                });
+                const data = await response.json();
+                
+                if (data.status === "success") {
+                    window.location.href = "/";
+                } else {
+                    alert(data.message);
+                }
+            } catch (err) {
+                console.error("Auth server error:", err);
+                alert("Failed to reach server pipeline.");
+            }
+        });
+    </script>
+</body>
+</html>

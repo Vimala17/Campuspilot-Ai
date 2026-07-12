@@ -1,20 +1,86 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, session, redirect, url_for
 from rag.retriever import retrieve
 import ollama
 import time
 
 app = Flask(__name__)
+# Highly secure secret key used for session tracking cookie encryption
+app.secret_key = "campus_pilot_secret_dynamic_key" 
 
 MODEL_NAME = "qwen2.5:1.5b"
 
+# Global In-Memory User Simulation Stack for Local Testing 
+# (Restarting the Flask server clears out this memory array cleanly)
+USERS_DB = {}
+
+
+# ==========================================================================
+# 1. CORE AUTHENTICATION ROUTING LAYER (Login / Signup Checks)
+# ==========================================================================
 
 @app.route("/")
 def home():
+    # FIXED RULE: If session cookie is not matching active login record, throw back to login view
+    if "user" not in session:
+        return redirect(url_for("login"))
     return render_template("index.html")
 
 
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        data = request.json or {}
+        email = data.get("email", "").strip()
+        password = data.get("password", "").strip()
+        
+        # Validates user record tracking logic matrices
+        if email in USERS_DB and USERS_DB[email]["password"] == password:
+            session["user"] = email
+            return jsonify({"status": "success", "message": "Login successful!"})
+        return jsonify({"status": "error", "message": "Invalid email or password parameters."})
+        
+    return render_template("login.html")
+
+
+@app.route("/signup", methods=["GET", "POST"])
+def signup():
+    if request.method == "POST":
+        data = request.json or {}
+        username = data.get("username", "").strip()
+        email = data.get("email", "").strip()
+        password = data.get("password", "").strip()
+        
+        if not email or not password:
+            return jsonify({"status": "error", "message": "Missing credentials setup parameters."})
+            
+        if email in USERS_DB:
+            return jsonify({"status": "error", "message": "User configuration target already exists."})
+            
+        # Register the user credentials into local runtime tracking storage matrix
+        USERS_DB[email] = {"username": username, "password": password}
+        session["user"] = email
+        return jsonify({"status": "success", "message": "Account tracking initialized successfully."})
+        
+    return render_template("signup.html")
+
+
+@app.route("/logout")
+def logout():
+    # Flush session memory clear and drop user validation state parameters
+    session.pop("user", None)
+    return redirect(url_for("login"))
+
+
+# ==========================================================================
+# 2. CHAT PIPELINE LAYER (RAG Matrix + Optimized Qwen Context Model Calls)
+# ==========================================================================
+
 @app.route("/chat", methods=["POST"])
 def chat():
+    # API security boundary wrapper rule validation check
+    if "user" not in session:
+        return jsonify({"answer": "Unauthorized access stream. Please login.", "sources": []}), 401
+
     try:
         user_question = request.json.get("message", "").strip()
 
@@ -24,12 +90,15 @@ def chat():
                 "sources": []
             })
 
+        # Knowledge Base Retrieval Execution Track
         start = time.time()
         context, sources = retrieve(user_question)
         print(f"Retriever Time: {time.time() - start:.2f} sec")
 
+        # Slice string lengths down to protect the input context pipeline parameters threshold 
         context = context[:700]
 
+        # Consolidated Persona Instruction Templates
         prompt = f"""
 You are CampusPilot AI.
 
@@ -69,6 +138,7 @@ Answer format:
 
         start = time.time()
 
+        # Look inside your @app.route("/chat") block template configuration options area
         response = ollama.chat(
             model=MODEL_NAME,
             messages=[
@@ -78,11 +148,11 @@ Answer format:
                 }
             ],
             options={
-                "temperature": 0.1,
-                "num_predict": 350,  # FIXED: Increased from 120 to 350 so generation completes fully
-                "top_k": 20,
-                "top_p": 0.8,
-                "num_ctx": 2048     # Increased context window to ensure full prompt intake
+                "temperature": 0.3,       # Slightly increased logic response flexibility parameters mawa
+                "num_predict": 650,        # 🚀 INCREASE VALUE: Raised to 650 to completely ensure action plans never clip off midpoint
+                "top_k": 30,
+                "top_p": 0.9,
+                "num_ctx": 4096            # 🚀 EXPAND POOL: Doubled context block window parameter size to prevent input clipping
             }
         )
 
@@ -97,12 +167,12 @@ Answer format:
 
     except Exception as e:
         print("ERROR:", e)
-
         return jsonify({
-            "answer": str(e),
+            "answer": f"Backend Error: {str(e)}",
             "sources": []
         })
 
 
 if __name__ == "__main__":
+    # Debug runtime execution pipeline tracking on local system
     app.run(debug=True)

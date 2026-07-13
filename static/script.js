@@ -150,8 +150,30 @@ row.innerHTML = `
         appendMessage(text, "user");
         renderHistory(); 
 
+        // 🚀 1. INJECT LOADER: Response dynamic pipeline hit avvagane indicator append chesthundhi mawa
+        const typingIndicatorDiv = document.createElement("div");
+        typingIndicatorDiv.className = "typing-container-wrapper";
+        typingIndicatorDiv.id = "liveTypingLoaderNode";
+        typingIndicatorDiv.innerHTML = `
+            <div class="avatar">🤖</div>
+            <div class="typing-indicator">
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+            </div>
+        `;
+        chatBox.appendChild(typingIndicatorDiv);
+        chatBox.scrollTop = chatBox.scrollHeight;
+
         // Pipeline API processing trigger execution
         const botOutput = await fetchOllamaRAGResponse(text);
+
+        // 🚀 2. DROP LOADER: Bot response ready avvagane dynamic placeholder bubble ni clean ga remove chesthundhi
+        const standardTargetLoader = document.getElementById("liveTypingLoaderNode");
+        if (standardTargetLoader && standardTargetLoader.parentNode) {
+            standardTargetLoader.parentNode.removeChild(standardTargetLoader);
+        }
+
         appendMessage(botOutput, "bot");
 
         // Release event listeners framework lock

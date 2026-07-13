@@ -1,2 +1,2 @@
 
-declare interface allSessionsMemoryType {}
+declare interface sessionTitlesType {}

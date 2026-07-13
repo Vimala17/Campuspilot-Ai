@@ -8,23 +8,23 @@ It uses Retrieval-Augmented Generation (RAG) with Ollama to provide accurate and
 
 # 🚀 Features
 
-- 🔐 User Login & Signup
-- 💬 AI Chatbot Interface
-- 📚 Study Planning
-- 💼 Placement Preparation
-- 🎤 Interview Tips
-- 📝 Resume Guidance
-- 💰 Budget Management
-- 🏠 Hostel Life Tips
-- 💻 Laptop Troubleshooting
-- 🚀 Internship Guidance
-- 🎓 Scholarship Information
-- 😊 Mental Wellbeing Support
-- 📖 Coding Roadmaps
-- 🌙 Dark & Light Theme
-- 📜 Chat History
-- 🔍 RAG-based Knowledge Retrieval
-- 🤖 Local AI using Ollama
+- User Login & Signup
+- AI Chatbot Interface
+- Study Planning
+- Placement Preparation
+- Interview Tips
+- Resume Guidance
+- Budget Management
+- Hostel Life Tips
+- Laptop Troubleshooting
+- Internship Guidance
+- Scholarship Information
+- Mental Wellbeing Support
+- Coding Roadmaps
+- Dark & Light Theme
+- Chat History
+- RAG-based Knowledge Retrieval
+- Local AI using Ollama
 
 ---
 
@@ -103,13 +103,13 @@ I used the Retrieval-Augmented Generation (RAG) approach because it allows the c
 
 ---
 
-# ⚖️ Tradeoff
+# Tradeoff
 
 The chatbot provides high-quality responses only when relevant information exists in the knowledge base. If the required information is missing, the chatbot may generate a more general response.
 
 ---
 
-# 📦 Installation
+# Installation
 
 Clone the repository:
 
@@ -205,13 +205,13 @@ The chatbot can answer questions like:
 
 # 🔮 Future Enhancements
 
-- 🎙️ Voice Assistant
-- 📄 PDF Upload Support
-- 🌐 Web Scraping for Automatic Knowledge Base Updates
-- 🌍 Multi-language Support
-- 📊 Student Dashboard
-- 📅 Attendance Tracker
-- 🎯 Personalized Recommendations
+- Voice Assistant
+- PDF Upload Support
+- Web Scraping for Automatic Knowledge Base Updates
+- Multi-language Support
+- Student Dashboard
+- Attendance Tracker
+- Personalized Recommendations
 
 ---
 
